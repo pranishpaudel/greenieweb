@@ -31,11 +31,11 @@ export const startFunctionality = async (appNameToInvoke) => {
         TotalPowerinMWRaw: calculatedPowerinMW,
         TotalEnergyRaw: calculatedTotalEnergy,
         TotalCo2EmissionRaw: calculatedCo2Emission,
-        SoftwarePowerWhileStartup: calculatedSoftwarePowerInMWWhileStartup.toString(),
-        SoftwarePowerAfterStartup: calculatedSoftwarePowerInMWAfterStartup.toString(),
-        SoftwareEnergyWhileStartup: calculatedSoftwareEnergyConsumedWhileStartup.toString(),
-        SoftwareEnergyAfterStartup: calculatedSoftwareEnergyConsumedAfterStartup.toString(),
-        SoftwareCo2WhileStartup: calculatedSoftwareCo2EmissionWhileStartup.toString(),
-        SoftwareCo2AfterStartup: calculatedSoftwareCo2EmissionAfterStartup.toString(),
+        SoftwarePowerWhileStartup: Math.abs(calculatedSoftwarePowerInMWWhileStartup).toString(),
+        SoftwarePowerAfterStartup: Math.abs(calculatedSoftwarePowerInMWAfterStartup).toString(),
+        SoftwareEnergyWhileStartup: Math.abs(calculatedSoftwareEnergyConsumedWhileStartup).toString(),
+        SoftwareEnergyAfterStartup: Math.abs(calculatedSoftwareEnergyConsumedAfterStartup).toString(),
+        SoftwareCo2WhileStartup: Math.abs(calculatedSoftwareCo2EmissionWhileStartup).toString(),
+        SoftwareCo2AfterStartup: Math.abs(calculatedSoftwareCo2EmissionAfterStartup).toString(),
     };
 };
