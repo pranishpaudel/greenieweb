@@ -9,12 +9,15 @@ import { startFunctionality } from "./main.data.js";
  * After sending the response, the function exits the process.
  */
 async function invoke() {
-    if (!checkIfMacOS)
-        return console.log("This script is only for MacOS");
     const app = express();
     const PORT = 3001;
     app.get("/:appNameToInvoke", async (req, res) => {
         const { appNameToInvoke } = req.params;
+        if (!checkIfMacOS)
+            return res.json({
+                success: false,
+                data: "Only intended to run for macOS",
+            });
         const stats = await startFunctionality(appNameToInvoke);
         const JSONSTATSDATA = {
             SoftwareStats: {
